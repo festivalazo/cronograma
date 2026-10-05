@@ -4,204 +4,202 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cronograma Festivalazo</title>
-<meta name="description" content="Cronograma del Festivalazo · El Origen · 9na edición">
-<meta name="theme-color" content="#1f3528">
+<meta name="description" content="Cronograma del Festivalazo · 9na edición">
+<meta name="theme-color" content="#7d7f78">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="img/icon-192.png">
 <link rel="apple-touch-icon" href="img/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&family=Special+Elite&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&family=League+Spartan:wght@600;700;800&family=Special+Elite&family=Caveat:wght@500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#1f3528; --bg2:#183022; --crema:#f3ead8; --durazno:#efcfa6; --tenue:#b9b6a6;
-  --vie:#5f7e07; --vie-f:#344a13; --sab:#a82e1d; --sab-f:#53291c;
-  --dom:#9a4a52; --dom-f:#4d3532; --lun:#c99f0c; --lun-f:#615815;
-  --inicial:#9fd38f; --intermedio:#f4a46b; --avanzado:#e8513f; --todos:#f0c3d6; --libre:#f3ead8;
-  --dia:var(--sab); --dia-f:var(--sab-f);
+  --amarillo:#ffc000; --crema:#f6dfc0; --texto:#121212;
+  --inicial:#5e7b07; --intermedio:#f39200; --avanzado:#dd2400; --atp:#cd87ae; --general:#fbd8b4;
+  --gris:#d3d4cf; --borde:#111;
+  --fondo:url(img/dias/fondo-viernes.jpg);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--crema);font-family:Outfit,system-ui,sans-serif;font-size:16px;line-height:1.3;min-height:100vh;padding-bottom:env(safe-area-inset-bottom)}
+body{background:#7d7f78;color:#fff;font-family:Questrial,system-ui,sans-serif;font-size:16px;line-height:1.25;min-height:100vh;padding-bottom:env(safe-area-inset-bottom);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-60px;z-index:-2;background:var(--fondo) center/cover no-repeat;filter:blur(22px) saturate(1.1);transition:background-image .4s}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.08) 40%,rgba(0,0,0,.25))}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit}
 .wrap{max-width:640px;margin:0 auto;padding:0 16px}
+.sombra{text-shadow:0 2px 6px rgba(0,0,0,.35)}
 
 /* encabezado */
-header{position:relative;padding:22px 0 14px}
-header .margarita{position:absolute;right:-6px;top:6px;width:92px;pointer-events:none}
-h1{font-weight:400;line-height:.95}
-h1 .c{display:block;font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:40px;color:var(--durazno)}
-h1 .f{display:block;font-family:"Special Elite",monospace;font-size:36px;letter-spacing:.5px;color:var(--crema)}
-.edicion{margin-top:8px;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:2.5px;color:var(--tenue);text-transform:uppercase}
+.colgante{display:block;width:100%;height:150px;object-fit:cover;object-position:right top;
+  -webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent),linear-gradient(to right,transparent,#000 25%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,#000 55%,transparent),linear-gradient(to right,transparent,#000 25%);mask-composite:intersect}
+header{margin-top:-62px;position:relative;text-align:center;padding-bottom:10px}
+h1{font-weight:400}
+h1 .c{display:block;font-family:Questrial,sans-serif;font-size:min(11.5vw,60px);letter-spacing:0;line-height:1;color:#fff}
+.sub{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:2px}
+.sub img{width:96px;height:57px;object-fit:cover;-webkit-mask-image:radial-gradient(closest-side,#000 30%,transparent);mask-image:radial-gradient(closest-side,#000 30%,transparent)}
+.sub .f{display:block;font-family:"Special Elite",monospace;font-size:30px;color:var(--crema);line-height:1}
+.sub .e{display:block;font-family:Caveat,cursive;font-size:22px;color:#fff;line-height:1;margin-top:2px}
 
 /* avisos */
 #avisos:empty{display:none}
-.aviso{display:flex;gap:10px;align-items:flex-start;background:var(--lun);color:#1d1a08;border-radius:12px;padding:12px 14px;margin-bottom:10px;font-weight:600;box-shadow:0 2px 0 rgba(0,0,0,.25)}
+.aviso{display:flex;gap:10px;align-items:flex-start;background:var(--amarillo);color:var(--texto);border:2px solid var(--borde);padding:12px 14px;margin-bottom:10px;font-family:"League Spartan",sans-serif;font-weight:700;font-size:17px}
 .aviso .ico{font-size:20px;line-height:1}
-.aviso small{display:block;font-weight:500;opacity:.75;font-size:12px;margin-top:2px}
+.aviso small{display:block;font-family:Questrial,sans-serif;font-weight:400;font-size:13px;margin-top:2px}
 
 /* ahora / sigue */
-#ahora{margin-bottom:18px}
-.panel{border:2px solid var(--crema);border-radius:16px;overflow:hidden;background:var(--bg2)}
-.panel + .panel{margin-top:10px}
-.panel-h{display:flex;flex-wrap:wrap;gap:2px 10px;justify-content:space-between;align-items:baseline;padding:10px 14px 8px;font-family:"Special Elite",monospace;letter-spacing:2px;font-size:13px;text-transform:uppercase}
-.panel.ya .panel-h{background:var(--crema);color:var(--bg)}
-.panel.ya .panel-h b{display:inline-flex;align-items:center;gap:8px}
-.punto{width:9px;height:9px;border-radius:50%;background:var(--avanzado);animation:late 1.4s infinite}
-@keyframes late{50%{opacity:.25}}
-.panel.sig{border-color:rgba(243,234,216,.35)}
-.panel.sig .panel-h{color:var(--durazno)}
-.panel-b{padding:4px 14px 12px}
-.panel .it{display:flex;gap:10px;align-items:flex-start;padding:7px 0}
-.panel .it + .it{border-top:1px solid rgba(243,234,216,.12)}
-.panel .tit{font-weight:700;font-size:18px}
-.panel .pro{font-size:14px;color:var(--tenue)}
-.panel .dot{margin-top:5px}
-.barra{height:4px;background:rgba(243,234,216,.15);border-radius:4px;margin:6px 0 2px;overflow:hidden}
-.barra i{display:block;height:100%;background:var(--durazno)}
-.queda{font-size:13px;color:var(--tenue)}
-.mensaje{padding:16px 14px;text-align:center}
-.mensaje .grande{font-family:"Playfair Display",serif;font-style:italic;font-size:28px;color:var(--durazno)}
-.mensaje p{color:var(--tenue);margin-top:4px}
+#ahora{margin:8px 0 18px}
+.etq{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:2px 10px;margin:0 0 6px;font-size:15px}
+.etq b{font-family:"League Spartan",sans-serif;font-weight:800;letter-spacing:2px;color:var(--amarillo);display:inline-flex;align-items:center;gap:8px}
+.punto{width:10px;height:10px;border-radius:50%;background:var(--avanzado);box-shadow:0 0 0 2px #fff;animation:late 1.4s infinite}
+@keyframes late{50%{opacity:.3}}
+.queda{font-size:14px;margin-top:6px}
+.barra{height:5px;background:rgba(255,255,255,.35);margin-top:6px;overflow:hidden}
+.barra i{display:block;height:100%;background:var(--amarillo)}
+.bloque-sig{margin-top:16px}
+.mensaje{background:rgba(255,255,255,.18);border:2px solid var(--borde);padding:18px 14px;text-align:center;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.mensaje .grande{font-family:Questrial,sans-serif;font-size:32px;color:var(--amarillo)}
+.mensaje p{margin-top:4px}
 
 /* pestañas de días */
-.dias{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.dias button{border-radius:12px;padding:8px 2px 7px;text-align:center;background:var(--c-f);border:2px solid transparent;opacity:.8}
-.dias button b{display:block;font-family:"Playfair Display",serif;font-style:italic;font-weight:600;font-size:19px;line-height:1.1}
-.dias button span{display:block;font-family:"Special Elite",monospace;font-size:11px;letter-spacing:1.5px}
-.dias button[aria-selected=true]{background:var(--c);border-color:var(--crema);opacity:1}
-.dias .hoy{font-size:9px;letter-spacing:1px;font-family:Outfit,sans-serif;font-weight:700;text-transform:uppercase;color:var(--crema)}
+.dias{position:sticky;top:0;z-index:5;padding:10px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.dias::before{content:"";position:absolute;inset:0 -16px;z-index:-1;background:rgba(90,92,86,.55);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.dias button{padding:6px 2px;text-align:center;border:2px solid transparent;background:rgba(0,0,0,.18)}
+.dias button b{display:block;font-family:Questrial,sans-serif;font-weight:400;font-size:19px;color:var(--amarillo);letter-spacing:.5px}
+.dias button span{display:block;font-size:12px}
+.dias button[aria-selected=true]{background:var(--amarillo);border-color:var(--borde)}
+.dias button[aria-selected=true] b,.dias button[aria-selected=true] span{color:var(--texto)}
+.dias .hoy{font-family:"League Spartan",sans-serif;font-weight:800;font-size:10px;letter-spacing:1px}
+
+/* título del día */
+.titulo-dia{display:flex;align-items:baseline;gap:12px;margin:14px 0 12px}
+.titulo-dia b{font-family:Questrial,sans-serif;font-weight:400;font-size:min(16vw,72px);line-height:1;color:var(--amarillo);text-shadow:0 3px 8px rgba(0,0,0,.35)}
+.titulo-dia span{font-size:26px}
+
+/* tabla */
+.tabla{border:2px solid var(--borde);background:var(--borde);display:grid;gap:2px;text-shadow:none}
+.fila{display:grid;grid-template-columns:62px 1fr;gap:2px}
+.hora{background:var(--amarillo);color:var(--texto);font-family:"League Spartan",sans-serif;font-weight:700;font-size:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 2px;line-height:1.1}
+.hora small{font-weight:600;font-size:12px}
+.celdas{display:grid;gap:2px;grid-template-columns:repeat(var(--cols,1),1fr)}
+.celda{background:var(--n,var(--general));color:var(--texto);padding:12px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;min-height:64px}
+.celda:last-child:nth-child(odd){grid-column:1/-1}
+.celdas[style*="--cols:3"] .celda:last-child:nth-child(odd){grid-column:auto}
+.celda .t{font-family:"League Spartan",sans-serif;font-weight:700;font-size:17px;line-height:1.15}
+.celda .d{font-size:14px;margin-top:2px}
+.celda .p{font-style:italic;font-size:15px;margin-top:3px}
+.celda.gris{background:var(--gris);min-height:48px}
+.celda.gris .t{font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.3px;font-size:16px}
+.celda.gris .d,.celda.gris .p{font-style:italic}
+.fila.pasada .celda,.fila.pasada .hora{filter:grayscale(.75) brightness(1.12) contrast(.8)}
+.fila.en-curso .hora{background:#fff}
+.fila.en-curso .hora::after{content:"AHORA";margin-top:4px;font-size:9px;letter-spacing:1px;background:var(--avanzado);color:#fff;padding:2px 4px}
 
 /* leyenda */
-.leyenda{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--tenue);margin:2px 0 12px}
-.leyenda span{display:inline-flex;align-items:center;gap:6px}
-.dot{flex:none;width:14px;height:14px;border-radius:4px;background:var(--n,transparent);border:1.5px solid rgba(0,0,0,.25)}
-.dot.libre{background:transparent;border-color:var(--crema)}
+.leyenda{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;max-width:320px;margin:18px auto 0;font-size:16px}
+.leyenda span{display:flex;align-items:center;gap:10px;letter-spacing:.5px}
+.leyenda i{width:24px;height:24px;border-radius:50%;background:var(--n);flex:none}
 
-/* cronograma del día */
-.dia{border:2px solid var(--crema);border-radius:16px;overflow:hidden;background:var(--dia-f)}
-.dia-h{background:var(--dia);padding:10px 14px;display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--crema)}
-.dia-h b{font-family:"Playfair Display",serif;font-style:italic;font-weight:600;font-size:30px}
-.dia-h span{font-family:"Special Elite",monospace;letter-spacing:2px;font-size:13px}
-.fila{display:grid;grid-template-columns:76px 1fr;border-top:1px solid rgba(0,0,0,.35)}
-.fila:first-of-type{border-top:0}
-.hora{padding:11px 0 11px 12px;font-weight:700;font-size:14px;color:var(--durazno);white-space:nowrap}
-.hora small{display:block;font-weight:500;color:var(--tenue);font-size:12px}
-.cont{padding:9px 12px 9px 8px;border-left:1px solid rgba(0,0,0,.35);min-width:0}
-.bloque{font-family:"Special Elite",monospace;letter-spacing:2.5px;font-size:12px;text-transform:uppercase;color:var(--tenue);padding:2px 0 4px}
-.act{display:flex;gap:9px;align-items:flex-start;padding:5px 0}
-.act + .act{border-top:1px dashed rgba(243,234,216,.13)}
-.act .dot{margin-top:3px}
-.act .t{font-weight:700;font-size:17px;line-height:1.2}
-.act .d{font-size:13px;color:var(--tenue)}
-.act .p{font-size:14px;color:var(--durazno);opacity:.9}
-.act.comida .t{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:20px;color:var(--durazno)}
-.fila.pasada{opacity:.45}
-.fila.en-curso{background:rgba(243,234,216,.1);box-shadow:inset 4px 0 0 var(--crema)}
-.fila.en-curso .hora::after{content:"AHORA";display:block;margin-top:4px;font-size:10px;letter-spacing:1.5px;background:var(--crema);color:var(--bg);border-radius:4px;padding:2px 5px;width:max-content}
-
-footer{text-align:center;padding:20px 0 30px;color:var(--tenue);font-size:13px}
-footer img.hongos{width:min(320px,80%);display:block;margin:0 auto 6px}
-footer a{color:var(--durazno)}
-footer p + p{margin-top:6px}
-.estado{font-size:12px}
-.estado.off{color:var(--intermedio)}
+footer{position:relative;text-align:center;padding:24px 0 34px;font-size:14px}
+footer a{font-weight:700;text-decoration:underline}
+footer p + p{margin-top:8px}
+.estado{font-size:12px;opacity:.85}
 </style>
 </head>
 <body>
+<img class="colgante" src="img/colgante.jpg" alt="">
 <div class="wrap">
-  <header>
-    <img class="margarita" src="img/margarita.png" alt="">
-    <h1><span class="c">Cronograma</span><span class="f">Festivalazo</span></h1>
-    <div class="edicion">El Origen · 9na edición</div>
+  <header class="sombra">
+    <h1><span class="c">CRONOGRAMA</span></h1>
+    <div class="sub">
+      <img src="img/margaritas.jpg" alt="">
+      <div><span class="f">festivalazo</span><span class="e">9na edición</span></div>
+    </div>
   </header>
 
   <div id="avisos" aria-live="polite"></div>
-  <section id="ahora" aria-live="polite"></section>
+  <section id="ahora" class="sombra" aria-live="polite"></section>
 
   <nav class="dias" id="dias" role="tablist"></nav>
-  <div class="leyenda">
-    <span><i class="dot" style="--n:var(--inicial)"></i>Inicial · cero experiencia</span>
-    <span><i class="dot" style="--n:var(--intermedio)"></i>Intermedio</span>
-    <span><i class="dot" style="--n:var(--avanzado)"></i>Avanzado</span>
-  </div>
   <section id="dia"></section>
 
-  <footer>
-    <img class="hongos" src="img/hongos.png" alt="">
-    <p><a href="img/cronograma.png" target="_blank">Ver el cronograma como imagen</a></p>
+  <div class="leyenda sombra">
+    <span><i style="--n:var(--inicial)"></i>INICIAL</span>
+    <span><i style="--n:var(--intermedio)"></i>INTERMEDIO</span>
+    <span><i style="--n:var(--avanzado)"></i>AVANZADO</span>
+    <span><i style="--n:var(--atp)"></i>A.T.P</span>
+  </div>
+
+  <footer class="sombra">
+    <p><a id="ver-imagen" href="img/dias/viernes.jpg" target="_blank">Ver el cronograma de este día como imagen</a></p>
     <p class="estado" id="estado"></p>
   </footer>
 </div>
 
 <script>
 // ===== Configuración =====
-// Si SHEET_ID tiene el id de una Google Sheet compartida "cualquiera con el enlace puede ver",
-// la página lee de ahí las pestañas "Cronograma" y "Avisos" cada minuto.
-// Si está vacío (o no hay internet) usa los datos de abajo / lo último guardado.
+// La página lee las pestañas "Cronograma" y "Avisos" de esta Google Sheet cada minuto
+// (tiene que estar compartida como "cualquiera con el enlace puede ver").
+// Si no puede (sin internet, o sin compartir) usa lo último guardado o los datos de abajo.
 const SHEET_ID = '1TewZcMW7hOO4xoBoEM9yTF8OFdMaG5m__1NG_OM9Nsw';
 
 const DIAS = [
-  {id:'Viernes', fecha:'2026-10-09', n:'9 oct', c:'--vie'},
-  {id:'Sábado',  fecha:'2026-10-10', n:'10 oct', c:'--sab'},
-  {id:'Domingo', fecha:'2026-10-11', n:'11 oct', c:'--dom'},
-  {id:'Lunes',   fecha:'2026-10-12', n:'12 oct', c:'--lun'},
+  {id:'Viernes', fecha:'2026-10-09', n:'9/10'},
+  {id:'Sábado',  fecha:'2026-10-10', n:'10/10'},
+  {id:'Domingo', fecha:'2026-10-11', n:'11/10'},
+  {id:'Lunes',   fecha:'2026-10-12', n:'12/10'},
 ];
 
 // Día | Desde | Hasta | Bloque | Actividad | Detalle | Profes | Nivel | Tipo
-// Nivel: inicial / intermedio / avanzado / libre (casilla blanca) / todos (casilla rosa)
-// Tipo: comida (en cursiva) o vacío
+// Nivel: inicial / intermedio / avanzado / atp / general (color crema)
+// Tipo: comida o gris (fila gris en cursiva) o vacío
+// Las actividades con el mismo día, horario y Bloque van juntas en la misma fila.
 const BASE = `
-Viernes|15:00|||Llegada||||
-Viernes|17:00|||Acuerdos – Info|Dinámicas equipo Festivalazo|||
-Viernes|18:00|20:00|Dinámica grupal|Clase de cuidados||Dan – Mati|inicial|
+Viernes|15:00|||Llegada y check in|||general|
+Viernes|17:00|||Bienvenida y acuerdos de convivencia||Equipo Festivalazo|general|
+Viernes|18:00|20:00||Caer con dignidad, cuidar con actitud||Dan y Mati|atp|
 Viernes|20:00|||Cena||||comida
-Viernes|21:30|||Apertura de fuego + fogón||||
-Viernes|22:00|||Ritual, danza y cuencos||Danza flow y Aye||
-Sábado|08:45|10:00|Clases paralelas|Acrobacias de piso||Mati|libre|
-Sábado|08:45|10:00|Clases paralelas|Verticales||Nico Huaquer|libre|
-Sábado|08:45|10:00|Clases paralelas|Yoga||Simón|libre|
-Sábado|10:00|11:00||Desayuno||||comida
-Sábado|11:00|11:20||Historia: El Origen||César||
-Sábado|11:20|13:30|Clases paralelas|Troupe e inversiones||Ari Peixoto – Martu|inicial|
-Sábado|11:20|13:30|Clases paralelas|Troupe con triples||Dan|intermedio|
-Sábado|11:20|13:30|Clases paralelas|Whips con flow||Dina y Foco|intermedio|
-Sábado|11:20|13:30|Clases paralelas|Amichi Whipcarian links||Gonza Aric|avanzado|
-Sábado|13:30|14:30||Almuerzo||||comida
-Sábado|15:30|18:00|Clases paralelas|Acroyoga fundamental||Tavo, Dina, Fabri|inicial|
-Sábado|15:30|18:00|Clases paralelas|Icarian flow||Oso y Ari|intermedio|
-Sábado|15:30|18:00|Clases paralelas|Icarianos 2||Rober y Agus|avanzado|
-Sábado|15:30|18:00|Clases paralelas|Mano a mano||Dan|intermedio|
-Sábado|18:15|20:00|Clases paralelas|Masajes thai||Gonza|inicial|
-Sábado|18:15|20:00|Clases paralelas|Historias a través del acro||César|inicial|
-Sábado|18:15|20:00|Clases paralelas|Percu corporal||Santi Ablin|inicial|
-Sábado|21:00|||Cena||||comida
-Sábado|22:00|||Varieté||Videos Pope||
-Domingo|10:00|11:00||Desayuno||||comida
-Domingo|11:00|13:30|Clases paralelas|Patas y piruetas||Solci – Fer|avanzado|
-Domingo|11:00|13:30|Clases paralelas|Dobles estafas||Carella|intermedio|
-Domingo|11:00|13:30|Clases paralelas|Flow h2h||Nacho y Lu Velázquez|intermedio|
-Domingo|11:00|13:30|Clases paralelas|El origen del flow||Oso y Ari|inicial|
-Domingo|13:30|||Entrega de souvenir y foto grupal||||
-Domingo|13:30|14:30||Almuerzo||||comida
-Domingo|14:30|17:00||¿Ya fuiste al bosque?|Posible búsqueda de regalos|||
-Domingo|17:30|20:00|Clases paralelas|Icarian rotaciones||Agus – Gonza|avanzado|
-Domingo|17:30|20:00|Clases paralelas|Banquinas||Carella|intermedio|
-Domingo|17:30|20:00|Clases paralelas|Flow multinivel||Rober – Ari|intermedio|
-Domingo|17:30|20:00|Clases paralelas|Flow pie pie||Male Mago|inicial|
-Domingo|17:30|20:00|Clases paralelas|Viaje sonoro y jam lunar||Aye – Ari|todos|
-Domingo|21:00|||Cena||Orquesta||comida
-Domingo|22:00|||Proyección video resumen||Sindicato Imaginario||
-Lunes|08:45|10:00|Clases paralelas|Yoga y meditación||Simón|libre|
-Lunes|08:45|10:00|Clases paralelas|Acro blandas||Mati|libre|
-Lunes|10:00|11:00||Desayuno||||comida
-Lunes|11:00|13:00|Clases paralelas|Whipops passing||Rober – Solci|intermedio|
-Lunes|11:00|13:00|Clases paralelas|Pass flyer||Emma, Joaco y Cami|inicial|
-Lunes|11:00|13:00|Clases paralelas|H2h contra||Fer – José|intermedio|
-Lunes|11:00|13:00|Clases paralelas|Whipops returning||Gonza – Agus|avanzado|
-Lunes|13:00|||Cierre plastilina||||
+Viernes|21:30|||Empieza el ritual|Fogón · Danza flow · Viaje sonoro||atp|
+Sábado|09:00||Clases|Acro de piso||Mati|atp|
+Sábado|09:00||Clases|Vertis||Nico|atp|
+Sábado|09:00||Clases|Yoga||Simón|atp|
+Sábado|10:00|||Desayuno||||comida
+Sábado|11:20||Clases|Troupe e inversiones||Martu y Ari|inicial|
+Sábado|11:20||Clases|Triples||Dan|intermedio|
+Sábado|11:20||Clases|Flow con whips||Dina y Foco|intermedio|
+Sábado|11:20||Clases|Whipcarian links||Gon y Ari|avanzado|
+Sábado|13:30|||Almuerzo||||comida
+Sábado|15:30||Clases|Fundamentos||Tavo, Dina y Fabri|inicial|
+Sábado|15:30||Clases|Spicy flow||Oso y Ari|intermedio|
+Sábado|15:30||Clases|Mano mano||Dan|intermedio|
+Sábado|15:30||Clases|Icarianos XXL||Agus y Rober|avanzado|
+Sábado|18:30||Clases|Masaje thai||Gonza|atp|
+Sábado|18:30||Clases|Historias con el acro||César|atp|
+Sábado|18:30||Clases|Percu corporal||Santi|atp|
+Sábado|21:00|||Cena, varieté, fiesta||||comida
+Domingo|10:00|||Desayuno||||comida
+Domingo|11:00||Clases|El origen del flow||Oso y Ari|inicial|
+Domingo|11:00||Clases|Hamacas||Martin|intermedio|
+Domingo|11:00||Clases|Mano mano flow||Lu y Nacho|intermedio|
+Domingo|11:00||Clases|Patas y piruetas||Sol y Fer|avanzado|
+Domingo|13:30|||Foto grupal y sorpresa||||gris
+Domingo|14:30|||Almuerzo y tiempo libre|¿Ya fuiste al bosque?|||comida
+Domingo|17:30||Clases|Flow pie pie||Male y Mago|inicial|
+Domingo|17:30||Clases|Banquinas||Martin|intermedio|
+Domingo|17:30||Clases|Todo por el flow||Rober y Ari|intermedio|
+Domingo|17:30||Clases|Icarianos||Agus y Gon|avanzado|
+Domingo|17:30||Clases|Viaje sonoro y jam lunar|Si ya está para vos||atp|
+Domingo|21:00|||Cena|Fanfarria Sostenida y Sindicato Imaginario|||comida
+Lunes|09:00||Clases|Acro blandas||Mati|atp|
+Lunes|09:00||Clases|Yoga y meditación||Simón|atp|
+Lunes|10:00|||Desayuno||||comida
+Lunes|11:20||Clases|Pass de flyer||Emma, Joaco y Cami|inicial|
+Lunes|11:20||Clases|Whips passing||Rob y Sol|intermedio|
+Lunes|11:20||Clases|Mano mano||Fer y José|intermedio|
+Lunes|11:20||Clases|Whips returning||Gon y Agus|avanzado|
+Lunes|13:30|||Cuerpo plastilina||Con las Aris|atp|
 Lunes|14:00|||Almuerzo||||comida
-Lunes|15:30|17:00||JAM||||
+Lunes|15:30|17:00||JAM y despedida interminable|||atp|
 `.trim().split('\n').map(l => l.split('|'));
 
 // ===== Utilidades =====
@@ -213,9 +211,12 @@ const params = new URLSearchParams(location.search);
 // ?t=2026-10-10T16:30 permite probar cómo se ve en otro momento
 const ahora = () => params.get('t') ? new Date(params.get('t') + ':00-03:00') : new Date();
 const hhmm = s => { const m = norm(s).match(/^(\d{1,2})[:.]?(\d{2})?/); return m ? m[1].padStart(2,'0') + ':' + (m[2] || '00') : ''; };
-const fmtHora = s => { const [h, m] = s.split(':'); return +h + (m === '00' ? '' : ':' + m); };
 const fecha = (dia, h) => new Date(`${dia.fecha}T${h}:00-03:00`);
 const diaDe = nombre => DIAS.find(d => sinTildes(d.id) === sinTildes(nombre));
+const TZ = 'America/Argentina/Buenos_Aires';
+const hhmmDe = f => f.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: TZ });
+const hoyStr = () => ahora().toLocaleDateString('en-CA', { timeZone: TZ });
+const NIVELES = ['inicial', 'intermedio', 'avanzado', 'atp', 'general'];
 
 function armar(filas) {
   const items = [];
@@ -223,12 +224,14 @@ function armar(filas) {
     const [dia, desde, hasta, bloque, actividad, detalle, profes, nivel, tipo] = f.map(norm);
     const d = diaDe(dia); const h = hhmm(desde);
     if (!d || !h) continue;
-    // si no hay "Actividad", el bloque es el título (ej: Desayuno, Llegada)
     const titulo = actividad || bloque;
+    const tp = sinTildes(tipo);
+    let nv = sinTildes(nivel).replace(/[^a-z]/g, '');
+    if (!NIVELES.includes(nv)) nv = 'general';
     items.push({
       dia: d, desde: h, hasta: hhmm(hasta), bloque: actividad ? bloque : '',
-      titulo, detalle, profes, nivel: sinTildes(nivel),
-      comida: sinTildes(tipo) === 'comida' || /^(desayuno|almuerzo|cena|merienda)$/.test(sinTildes(titulo)),
+      titulo, detalle, profes, nivel: nv,
+      gris: tp === 'comida' || tp === 'gris' || /^(desayuno|almuerzo|cena|merienda)$/.test(sinTildes(titulo)),
     });
   }
   // fin implícito: el próximo horario de ese día, o 1,5 h después
@@ -248,59 +251,55 @@ let diaSel = null;
 let ultimaAct = null;
 
 try {
-  const g = JSON.parse(localStorage.getItem('crono') || 'null');
+  const g = JSON.parse(localStorage.getItem('crono2') || 'null');
   if (g && g.filas && g.filas.length) { ITEMS = armar(g.filas); AVISOS = g.avisos || []; ultimaAct = new Date(g.cuando); }
 } catch (e) {}
 
 // ===== Render =====
-const dot = n => n ? `<i class="dot ${n === 'libre' ? 'libre' : ''}" style="--n:var(--${esc(n)})"></i>` : '';
-const rango = it => fmtHora(it.desde) + (it.hasta ? ' a ' + fmtHora(it.hasta) : ' hs');
-
 function grupos(lista) {
-  // agrupa actividades que comparten horario y bloque (ej: clases paralelas)
+  // agrupa actividades que comparten día, horario y bloque (ej: clases paralelas)
   const out = [];
   for (const it of lista) {
-    const k = it.desde + '|' + it.hasta + '|' + it.bloque;
-    const g = out.find(x => x.k === k && it.bloque);
+    const k = it.dia.id + '|' + it.desde + '|' + it.hasta + '|' + it.bloque;
+    const g = it.bloque && out.find(x => x.k === k);
     if (g) g.items.push(it); else out.push({ k, items: [it] });
   }
   return out;
 }
 
-function actHTML(it, conPro = true) {
-  return `<div class="act ${it.comida ? 'comida' : ''}">${dot(it.nivel)}<div>
-    <div class="t">${esc(it.titulo)}</div>
-    ${it.detalle ? `<div class="d">${esc(it.detalle)}</div>` : ''}
-    ${conPro && it.profes ? `<div class="p">${esc(it.profes)}</div>` : ''}
-  </div></div>`;
+const celda = it => `<div class="celda ${it.gris ? 'gris' : ''}" style="--n:var(--${it.nivel})">
+  <div class="t">${esc(it.titulo)}</div>
+  ${it.detalle ? `<div class="d">${esc(it.detalle)}</div>` : ''}
+  ${it.profes ? `<div class="p">${esc(it.profes)}</div>` : ''}
+</div>`;
+
+function filaHTML(g, estado = '', horaExtra = '') {
+  const a = g.items[0], n = g.items.length;
+  const cols = n === 1 ? 1 : n === 3 ? 3 : 2;
+  return `<div class="fila ${estado}">
+    <div class="hora">${esc(a.desde)}${a.hasta ? `<small>a ${esc(a.hasta)}</small>` : ''}${horaExtra}</div>
+    <div class="celdas" style="--cols:${cols}">${g.items.map(celda).join('')}</div>
+  </div>`;
 }
 
 function renderDias() {
-  const hoy = DIAS.find(d => d.fecha === hoyStr());
+  const hoy = hoyStr();
   $('#dias').innerHTML = DIAS.map(d => `
-    <button role="tab" aria-selected="${d === diaSel}" style="--c:var(${d.c});--c-f:var(${d.c}-f)" data-d="${d.id}">
-      <b>${d.id.slice(0, 3)}</b><span>${d.n}</span>${d === hoy ? '<span class="hoy">hoy</span>' : ''}
+    <button role="tab" aria-selected="${d === diaSel}" data-d="${d.id}">
+      <b>${d.id.slice(0, 3).toUpperCase()}</b><span>${d.fecha === hoy ? '<span class="hoy">HOY</span>' : d.n}</span>
     </button>`).join('');
 }
 
-function hoyStr() {
-  return ahora().toLocaleDateString('en-CA', { timeZone: 'America/Argentina/Buenos_Aires' });
-}
-
 function renderDia() {
-  const d = diaSel, t = ahora();
-  document.documentElement.style.setProperty('--dia', `var(${d.c})`);
-  document.documentElement.style.setProperty('--dia-f', `var(${d.c}-f)`);
+  const d = diaSel, t = ahora(), clave = sinTildes(d.id);
+  document.documentElement.style.setProperty('--fondo', `url(img/dias/fondo-${clave}.jpg)`);
+  $('#ver-imagen').href = `img/dias/${clave}.jpg`;
   const filas = grupos(ITEMS.filter(i => i.dia === d)).map(g => {
-    const a = g.items[0];
-    const fin = Math.max(...g.items.map(i => i.fin));
-    const estado = t >= fin ? 'pasada' : t >= a.ini ? 'en-curso' : '';
-    return `<div class="fila ${estado}">
-      <div class="hora">${esc(fmtHora(a.desde))}${a.hasta ? `<small>a ${esc(fmtHora(a.hasta))}</small>` : '<small>hs</small>'}</div>
-      <div class="cont">${a.bloque ? `<div class="bloque">${esc(a.bloque)}</div>` : ''}${g.items.map(i => actHTML(i)).join('')}</div>
-    </div>`;
+    const ini = g.items[0].ini, fin = Math.max(...g.items.map(i => i.fin));
+    return filaHTML(g, t >= fin ? 'pasada' : t >= ini ? 'en-curso' : '');
   }).join('');
-  $('#dia').innerHTML = `<div class="dia"><div class="dia-h"><b>${d.id}</b><span>${d.n.toUpperCase()}</span></div>${filas}</div>`;
+  $('#dia').innerHTML = `<div class="titulo-dia"><b>${d.id.toUpperCase()}</b><span class="sombra">${d.n}</span></div>
+    <div class="tabla">${filas}</div>`;
 }
 
 function falta(ms) {
@@ -319,32 +318,27 @@ function renderAhora() {
   let html = '';
 
   if (!enCurso.length && !proxIni) {
-    html = `<div class="panel"><div class="mensaje"><div class="grande">¡Gracias por venir!</div><p>Nos vemos en la próxima edición.</p></div></div>`;
+    html = `<div class="mensaje"><div class="grande">¡Gracias por venir!</div><p>Nos vemos en la próxima edición.</p></div>`;
   } else if (!enCurso.length && t < ITEMS[0].ini) {
     const dias = Math.ceil((ITEMS[0].ini - t) / 86400000);
-    html = `<div class="panel"><div class="mensaje"><div class="grande">${dias > 1 ? `Faltan ${dias} días` : 'Arrancamos ' + falta(ITEMS[0].ini - t)}</div>
-      <p>El Festivalazo empieza el viernes 9 a las ${fmtHora(ITEMS[0].desde)} hs.</p></div></div>`;
+    html = `<div class="mensaje"><div class="grande">${dias > 1 ? `Faltan ${dias} días` : 'Arrancamos ' + falta(ITEMS[0].ini - t)}</div>
+      <p>El Festivalazo empieza el viernes 9/10 a las ${esc(ITEMS[0].desde)}.</p></div>`;
   } else {
     if (enCurso.length) {
       const fin = new Date(Math.min(...enCurso.map(i => i.fin)));
       const ini = new Date(Math.max(...enCurso.map(i => i.ini)));
       const pct = Math.min(100, Math.max(0, (t - ini) / (fin - ini) * 100));
-      html += `<div class="panel ya"><div class="panel-h"><b><i class="punto"></i>Ahora</b><span>${t.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'America/Argentina/Buenos_Aires' })}</span></div>
-        <div class="panel-b">${grupos(enCurso).map(g => (g.items[0].bloque ? `<div class="bloque" style="padding-top:8px">${esc(g.items[0].bloque)} · ${esc(rango(g.items[0]))}</div>` : '') +
-          g.items.map(i => `<div class="it">${dot(i.nivel)}<div><div class="tit">${esc(i.titulo)}</div>${i.profes ? `<div class="pro">${esc(i.profes)}</div>` : ''}${!i.bloque ? `<div class="pro">${esc(rango(i))}</div>` : ''}</div></div>`).join('')).join('')}
-          <div class="barra"><i style="width:${pct}%"></i></div><div class="queda">Termina ${falta(fin - t)} · ${fmtHora(hhmmDe(fin))} hs</div></div></div>`;
+      html += `<div class="etq"><b><i class="punto"></i>AHORA</b><span>${hhmmDe(t)}</span></div>
+        <div class="tabla">${grupos(enCurso).map(g => filaHTML(g)).join('')}</div>
+        <div class="barra"><i style="width:${pct}%"></i></div><div class="queda">Termina ${falta(fin - t)} · ${hhmmDe(fin)}</div>`;
     }
     if (prox.length) {
       const mismoDia = prox[0].dia.fecha === hoyStr();
-      html += `<div class="panel sig"><div class="panel-h"><b>A continuación</b><span>${mismoDia ? '' : prox[0].dia.id + ' '}${fmtHora(prox[0].desde)} hs · ${falta(prox[0].ini - t)}</span></div>
-        <div class="panel-b">${prox.map(i => `<div class="it">${dot(i.nivel)}<div><div class="tit">${esc(i.titulo)}</div>${i.profes ? `<div class="pro">${esc(i.profes)}</div>` : ''}</div></div>`).join('')}</div></div>`;
+      html += `<div class="${enCurso.length ? 'bloque-sig' : ''}"><div class="etq"><b>A CONTINUACIÓN</b><span>${mismoDia ? '' : prox[0].dia.id + ' '}${esc(prox[0].desde)} · ${falta(prox[0].ini - t)}</span></div>
+        <div class="tabla">${grupos(prox).map(g => filaHTML(g)).join('')}</div></div>`;
     }
   }
   $('#ahora').innerHTML = html;
-}
-
-function hhmmDe(f) {
-  return f.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'America/Argentina/Buenos_Aires' });
 }
 
 function renderAvisos() {
@@ -352,11 +346,8 @@ function renderAvisos() {
 }
 
 function renderEstado() {
-  const e = $('#estado');
-  if (!SHEET_ID) { e.textContent = ''; return; }
   const off = !navigator.onLine;
-  e.className = 'estado' + (off ? ' off' : '');
-  e.textContent = (off ? 'Sin conexión · ' : '') + (ultimaAct ? 'Actualizado ' + ultimaAct.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' }) : '');
+  $('#estado').textContent = (off ? 'Sin conexión · ' : '') + (ultimaAct ? 'Actualizado ' + hhmmDe(ultimaAct) : '');
 }
 
 function render() {
@@ -389,7 +380,7 @@ async function actualizar() {
     ITEMS = armar(filas);
     AVISOS = av.slice(1).filter(f => norm(f[0])).map(f => ({ texto: norm(f[0]), hora: norm(f[1]) }));
     ultimaAct = new Date();
-    try { localStorage.setItem('crono', JSON.stringify({ filas, avisos: AVISOS, cuando: ultimaAct })); } catch (e) {}
+    try { localStorage.setItem('crono2', JSON.stringify({ filas, avisos: AVISOS, cuando: ultimaAct })); } catch (e) {}
   } catch (e) { console.warn('No se pudo actualizar', e); }
   render();
 }

@@ -1,6 +1,7 @@
 // Guarda la página para que funcione sin señal. Subir la versión al publicar cambios.
-const CACHE = 'crono-v2';
-const BASE = ['./', 'index.html', 'manifest.json', 'img/margarita.png', 'img/hongos.png', 'img/icon-192.png', 'img/cronograma.png'];
+const CACHE = 'crono-v3';
+const BASE = ['./', 'index.html', 'manifest.json', 'img/colgante.jpg', 'img/margaritas.jpg', 'img/icon-192.png',
+  ...['viernes', 'sabado', 'domingo', 'lunes'].flatMap(d => [`img/dias/${d}.jpg`, `img/dias/fondo-${d}.jpg`])];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(BASE)).then(() => self.skipWaiting()));
