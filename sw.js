@@ -1,5 +1,5 @@
 // Guarda la página para que funcione sin señal. Subir la versión al publicar cambios.
-const CACHE = 'crono-v7';
+const CACHE = 'crono-v8';
 const BASE = ['./', 'index.html', 'manifest.json', 'img/colgante.jpg', 'img/margaritas.jpg', 'img/icon-192.png',
   ...['viernes', 'sabado', 'domingo', 'lunes'].flatMap(d => [`img/dias/${d}.jpg`, `img/dias/fondo-${d}.jpg`])];
 
@@ -14,7 +14,8 @@ self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET' || url.hostname === 'docs.google.com') return; // la planilla siempre por red
   // red primero (para tener lo último), y si no hay señal, lo guardado
   e.respondWith(
-    fetch(e.request).then(r => {
+    // misma web: saltear la copia del navegador (GitHub la guarda 10 min) para ver siempre lo último
+    fetch(url.origin === location.origin ? new Request(e.request.url, { cache: 'no-cache' }) : e.request).then(r => {
       if (r.ok || r.type === 'opaque') { const copia = r.clone(); caches.open(CACHE).then(c => c.put(e.request, copia)); }
       return r;
     }).catch(() => caches.match(e.request, { ignoreSearch: true }))

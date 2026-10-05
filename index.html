@@ -489,7 +489,7 @@ setInterval(() => { renderAhora(); renderDia(); }, 30000);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) actualizar(); });
 addEventListener('online', actualizar);
 addEventListener('offline', renderEstado);
-if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js');
+if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' });
 </script>
 </body>
 </html>
