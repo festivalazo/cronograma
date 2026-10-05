@@ -1,5 +1,5 @@
 // Guarda la página para que funcione sin señal. Subir la versión al publicar cambios.
-const CACHE = 'crono-v1';
+const CACHE = 'crono-v2';
 const BASE = ['./', 'index.html', 'manifest.json', 'img/margarita.png', 'img/hongos.png', 'img/icon-192.png', 'img/cronograma.png'];
 
 self.addEventListener('install', e => {
