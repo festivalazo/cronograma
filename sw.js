@@ -1,5 +1,5 @@
 // Guarda la página para que funcione sin señal. Subir la versión al publicar cambios.
-const CACHE = 'crono-v8';
+const CACHE = 'crono-v9';
 const BASE = ['./', 'index.html', 'manifest.json', 'img/colgante.jpg', 'img/margaritas.jpg', 'img/icon-192.png',
   ...['viernes', 'sabado', 'domingo', 'lunes'].flatMap(d => [`img/dias/${d}.jpg`, `img/dias/fondo-${d}.jpg`])];
 
