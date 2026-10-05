@@ -188,14 +188,14 @@ Domingo|17:30||Clases|Flow pie pie||Male y Mago|inicial|
 Domingo|17:30||Clases|Banquinas||Martin|intermedio|
 Domingo|17:30||Clases|Todo por el flow||Rober y Ari|intermedio|
 Domingo|17:30||Clases|Icarianos||Agus y Gon|avanzado|
-Domingo|17:30||Clases|Viaje sonoro y jam lunar|Si ya está para vos||atp|
+Domingo|17:30||Clases|Viaje sonoro y jam lunar|Si necesitas bajar:||atp|
 Domingo|21:00|||Cena|Fanfarria Sostenida y Sindicato Imaginario|||comida
 Lunes|09:00||Clases|Acro blandas||Mati|atp|
 Lunes|09:00||Clases|Yoga y meditación||Simón|atp|
 Lunes|10:00|||Desayuno||||comida
 Lunes|11:20||Clases|Pass de flyer||Emma, Joaco y Cami|inicial|
 Lunes|11:20||Clases|Whips passing||Rob y Sol|intermedio|
-Lunes|11:20||Clases|Mano mano||Fer y José|intermedio|
+Lunes|11:20||Clases|Mano mano||Fer y Jose|intermedio|
 Lunes|11:20||Clases|Whips returning||Gon y Agus|avanzado|
 Lunes|13:30|||Cuerpo plastilina||Con las Aris|atp|
 Lunes|14:00|||Almuerzo||||comida
@@ -268,8 +268,9 @@ function grupos(lista) {
 }
 
 const celda = it => `<div class="celda ${it.gris ? 'gris' : ''}" style="--n:var(--${it.nivel})">
+  ${it.detalle.endsWith(':') ? `<div class="d">${esc(it.detalle)}</div>` : ''}
   <div class="t">${esc(it.titulo)}</div>
-  ${it.detalle ? `<div class="d">${esc(it.detalle)}</div>` : ''}
+  ${it.detalle && !it.detalle.endsWith(':') ? `<div class="d">${esc(it.detalle)}</div>` : ''}
   ${it.profes ? `<div class="p">${esc(it.profes)}</div>` : ''}
 </div>`;
 
